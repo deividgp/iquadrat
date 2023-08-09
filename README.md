@@ -18,11 +18,11 @@ El `schema` de la base de datos:
 
 Debes generar los getters y los setters de las entidades:
 
-    $ php bin/console ¿?
+    $ php bin/console make:entity --regenerate App
 
 Y cargar las fixtures (datos iniciales):
 
-    $ php bin/console ¿?
+    $ php bin/console doctrine:fixtures:load
 
 Prueba nº 1
 -----------
@@ -115,10 +115,14 @@ Debes crear una nueva entidad `User` con los siguientes campos:
 
 Y generar los getters y setters
 
+    $ php bin/console make:entity
+
 Prueba nº 6
 -----------
 
 Debes crear un nuevo controlador `UserController` que implemente CRUD para la entidad `User`. ([https://en.wikipedia.org/wiki/Create,\_read,\_update\_and\_delete](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete))
+
+    $ php bin/console make:crud User
 
 Prueba nº 7
 -----------
