@@ -28,7 +28,7 @@ class TownRepository extends ServiceEntityRepository
             ->setParameter('provinceId', $provinceId)
             ->orderBy('t.name', 'ASC')
             ->getQuery()
-            ->getResult();
+            ->getArrayResult();
     }
 
 //    /**

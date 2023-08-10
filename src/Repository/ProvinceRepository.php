@@ -25,7 +25,7 @@ class ProvinceRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('p')
             ->orderBy('p.name', 'ASC')
             ->getQuery()
-            ->getResult();
+            ->getArrayResult();
     }
 
 //    /**

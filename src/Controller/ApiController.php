@@ -20,32 +20,16 @@ class ApiController extends AbstractController
     public function index(ProvinceRepository $provinceRepository): JsonResponse
     {
         $provinces = $provinceRepository->findAll();
-        $data = [];
-
-        foreach ($provinces as $province) {
-            $data[] = [
-                'id' => $province->getId(),
-                'name' => $province->getName(),
-            ];
-         }
  
-        return $this->json($data);
+        return $this->json($provinces);
     }
 
     #[Route('/provinces/{id}/towns', name: 'provinces_towns', methods: ['GET'])]
     public function provincesTowns(TownRepository $townRepository, int $id): JsonResponse
     {
         $towns = $townRepository->findByProvinceId($id);
-        $data = [];
-
-        foreach ($towns as $town) {
-            $data[] = [
-                'id' => $town->getId(),
-                'name' => $town->getName(),
-            ];
-         }
  
-        return $this->json($data);
+        return $this->json($towns);
     }
 
     #[Route('/message', name: 'message_create', methods: ['PUT'])]
